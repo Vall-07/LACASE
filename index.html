@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Liga Acadêmica de Conservação de Animais Silvestres e Exóticos (LACASE) da Universidade Federal de Jataí (UFJ).">
+    <title>LACASE UFJ | Conservação de Animais Silvestres e Exóticos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container header-content">
+            <a href="index.html" class="brand">
+                <div class="brand-text">
+                    <span class="acronym">LACASE</span>
+                    <span class="sub-brand">Conservação Animal | UFJ</span>
+                </div>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Início</a></li>
+                    <li><a href="institucional.html" class="nav-link">Institucional</a></li>
+                    <li><a href="producoes.html" class="nav-link">Produção Científica</a></li>
+                    <li><a href="equipe.html" class="nav-link">Equipe</a></li>
+                    <li><a href="blog.html" class="nav-link">Extensão</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+                <div class="menu-controls">
+                    <button id="theme-toggle" class="control-btn">🌓 Tema Escuro</button>
+                    <div class="font-controls">
+                        <button id="font-up" class="control-btn">A+</button>
+                        <button id="font-down" class="control-btn">A-</button>
+                    </div>
+                </div>
+            </nav>
+            <button class="mobile-toggle" id="mobile-toggle">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-advanced">
+            <div class="hero-overlay"></div>
+            <img src="https://images.unsplash.com/photo-1549480017-d76466a4b7e8?auto=format&fit=crop&w=1920&q=80" alt="Arara no Cerrado" class="hero-img" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="container hero-text-box">
+                <h1 class="reveal">Ciência a serviço da <br><span class="text-green">Biodiversidade.</span></h1>
+                <p class="fade-in">A LACASE integra pesquisa e extensão na UFJ para promover a conscientização ambiental, estudando desde a fisiologia térmica de répteis até os bioindicadores do Cerrado.</p>
+                <div class="hero-actions">
+                    <a href="producoes.html" class="btn btn-filled">Explorar Pesquisas</a>
+                    <a href="#impacto" class="btn btn-outline">Ver Impacto</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="impacto" class="quick-stats container py-large">
+            <div class="section-header text-center">
+                <h2>Nosso Impacto e Produção</h2>
+                <p>Resultados das nossas ações de ensino, pesquisa e extensão.</p>
+            </div>
+            <div class="modern-grid">
+                <div class="stat-card">
+                    <span class="stat-number">80</span>
+                    <span class="stat-label">Alunos Atingidos na Extensão</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">8.810</span>
+                    <span class="stat-label">Contas Alcançadas (Instagram)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Artigos e Resumos Publicados</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="event-section" style="background-color: var(--ufj-blue); color: #ffffff; padding: 60px 0;">
+            <div class="container flex-between" style="gap: 30px; align-items: center;">
+                <div class="event-info" style="flex: 1;">
+                    <span style="background-color: var(--accent-orange); padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; display: inline-block; margin-bottom: 15px;">Evento Online - Inscrições Abertas</span>
+                    <h2 style="color: #ffffff; font-size: 2.5rem; margin-bottom: 15px; line-height: 1.2;">Medicina de Anfíbios: Abordagem Integrada à Saúde e Conservação</h2>
+                    <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 20px;">Palestra ministrada pelo CEO da The Wild Place e membro do Amphibian Specialist Group (ASG/IUCN). Evento totalmente online e gratuito.</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 30px; opacity: 0.9;">
+                        <li style="margin-bottom: 10px;">📅 <strong>Data:</strong> 08 de Abril de 2026</li>
+                        <li>⏰ <strong>Horário:</strong> 19:30 às 21:30 (GMT-3)</li>
+                    </ul>
+                    <a href="https://www.even3.com.br/medicina-de-anfibios-uma-abordagem-integrada-a-saude-e-conservacao-713598/" target="_blank" class="btn btn-filled" style="background-color: var(--nature-green); border-color: var(--nature-green);">Garantir Vaga no Even3</a>
+                </div>
+                <div class="event-image" style="flex: 1; text-align: center;">
+                    <img src="img/capaiago.f5dee42be9ac460db973.webp" alt="Banner do Evento Medicina de Anfíbios" style="width: 100%; max-width: 500px; aspect-ratio: 4/3; object-fit: cover; object-position: center top; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                </div>
+            </div>
+        </section>
+
+        <section class="news-section py-large bg-alt">
+            <div class="container">
+                <div class="section-header flex-between">
+                    <h2>Ações e Extensão</h2>
+                    <a href="blog.html" class="link-more">Ver publicações completas →</a>
+                </div>
+                <div class="modern-grid">
+                    <article class="featured-card">
+                        <div class="card-image">
+                            <img src="img/images.jpg" alt="Sala de aula" style="width: 100%; height: 100%; object-fit: cover;">
+                            <span class="badge">Educação Ambiental</span>
+                        </div>
+                        <div class="card-body">
+                            <h3>Ensino Ativo nas Escolas</h3>
+                            <p>Intervenção com 80 alunos de três colégios aplicando o ciclo de ação-reflexão-ação para o ensino sobre fauna silvestre e exótica.</p>
+                        </div>
+                    </article>
+                   
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-complex">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>LACASE UFJ</h3>
+                <p>Liga Acadêmica de Conservação de Animais Silvestres e Exóticos.</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <p>lacaseufj@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-legal container text-center">
+            <p>&copy; 2026 LACASE UFJ. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

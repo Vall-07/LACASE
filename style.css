@@ -1,0 +1,724 @@
+/* ==========================================================================
+   1. VARIÁVEIS GLOBAIS E TEMATIZAÇÃO (LIGHT / DARK MODE)
+   ========================================================================== */
+:root {
+    --bg-color: #f4f6f8;
+    --bg-alt: #ffffff;
+    --text-main: #1b365d;
+    --text-muted: #64748b;
+    --ufj-blue: #003b49; 
+    --nature-green: #007a78; 
+    --accent-orange: #dc582a;
+    --border-color: #e2e8f0;
+    --font-heading: 'Red Hat Display', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+[data-theme="dark"] {
+    --bg-color: #0a1114;
+    --bg-alt: #121d22;
+    --text-main: #f4f7f6;
+    --text-muted: #94a3b8;
+    --ufj-blue: #005a6e;
+    --nature-green: #34d399;
+    --accent-orange: #fb923c;
+    --border-color: #334155;
+    --shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* ==========================================================================
+   2. RESET E BASE
+   ========================================================================== */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: var(--font-body); 
+    background-color: var(--bg-color); 
+    color: var(--text-main); 
+    line-height: 1.7; 
+    transition: background-color var(--transition), color var(--transition); 
+    overflow-x: hidden; 
+}
+
+h1, h2, h3, h4 { 
+    font-family: var(--font-heading); 
+    color: var(--text-main); 
+    font-weight: 700; 
+}
+
+a { 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+ul { 
+    list-style: none; 
+}
+
+img { 
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+.container { 
+    width: 100%; 
+    max-width: 1300px; 
+    margin: 0 auto; 
+    padding: 0 30px; 
+}
+
+.py-large { 
+    padding: 80px 0; 
+}
+
+.text-center { 
+    text-align: center; 
+}
+
+.flex-between { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.bg-alt { 
+    background-color: var(--bg-alt); 
+}
+
+.text-green { 
+    color: var(--nature-green); 
+}
+
+.text-muted { 
+    color: var(--text-muted); 
+}
+
+/* ==========================================================================
+   3. HEADER E NAVEGAÇÃO
+   ========================================================================== */
+.navbar {
+    background-color: var(--bg-alt);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.header-content { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+}
+
+.brand { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+}
+
+.brand-text .acronym { 
+    font-size: 1.8rem; 
+    font-weight: 900; 
+    color: var(--ufj-blue); 
+    display: block; 
+    line-height: 1.1; 
+}
+
+.brand-text .sub-brand { 
+    font-size: 0.75rem; 
+    color: var(--nature-green); 
+    text-transform: uppercase; 
+    display: block; 
+    font-weight: 700; 
+    letter-spacing: 1px; 
+}
+
+.nav-menu { 
+    display: flex; 
+    align-items: center; 
+    gap: 30px; 
+}
+
+.nav-list { 
+    display: flex; 
+    gap: 30px; 
+    align-items: center; 
+}
+
+.nav-link { 
+    font-weight: 500; 
+    color: var(--ufj-blue); 
+    transition: var(--transition); 
+    padding: 8px 12px; 
+    border-radius: 8px; 
+}
+
+.nav-link:hover, 
+.nav-link.active { 
+    color: var(--nature-green); 
+    background-color: rgba(0, 122, 120, 0.1); 
+}
+
+.menu-controls { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    padding-left: 30px; 
+    border-left: 2px solid var(--border-color); 
+}
+
+.font-controls { 
+    display: flex; 
+    gap: 5px; 
+}
+
+.control-btn {
+    background-color: var(--bg-color); 
+    border: 1px solid var(--border-color); 
+    color: var(--text-main);
+    padding: 8px 12px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-family: var(--font-body); 
+    font-weight: 500; 
+    font-size: 0.9rem; 
+    transition: var(--transition);
+}
+
+.control-btn:hover { 
+    background-color: var(--nature-green); 
+    color: #ffffff; 
+    border-color: var(--nature-green); 
+}
+
+.mobile-toggle { 
+    display: none; 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    padding: 5px; 
+}
+
+.mobile-toggle .bar { 
+    display: block; 
+    width: 25px; 
+    height: 3px; 
+    background-color: var(--ufj-blue); 
+    margin: 5px 0; 
+    transition: var(--transition); 
+}
+
+/* ==========================================================================
+   4. HERO E BOTÕES
+   ========================================================================== */
+.hero-advanced { 
+    position: relative; 
+    height: 80vh; 
+    min-height: 500px; 
+    display: flex; 
+    align-items: center; 
+    color: #ffffff; 
+    overflow: hidden; 
+}
+
+.hero-img { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    z-index: 1; 
+}
+
+.hero-overlay { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: linear-gradient(90deg, rgba(0,59,73,0.9) 0%, rgba(0,59,73,0.4) 100%); 
+    z-index: 2; 
+}
+
+.hero-text-box { 
+    position: relative; 
+    z-index: 3; 
+    max-width: 800px; 
+}
+
+.hero-text-box h1 { 
+    font-size: 4rem; 
+    color: #ffffff; 
+    margin-bottom: 20px; 
+    line-height: 1.1; 
+}
+
+.hero-text-box p { 
+    font-size: 1.2rem; 
+    margin-bottom: 30px; 
+}
+
+.btn { 
+    display: inline-block; 
+    padding: 15px 35px; 
+    border-radius: 50px; 
+    font-weight: 700; 
+    cursor: pointer; 
+    transition: var(--transition); 
+    text-align: center; 
+}
+
+.btn-filled { 
+    background-color: var(--nature-green); 
+    color: #ffffff; 
+    border: 2px solid var(--nature-green); 
+}
+
+.btn-filled:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
+    background-color: transparent; 
+    color: var(--nature-green); 
+}
+
+.btn-outline { 
+    border: 2px solid #ffffff; 
+    color: #ffffff; 
+    margin-left: 15px; 
+}
+
+.btn-outline:hover { 
+    background-color: #ffffff; 
+    color: var(--ufj-blue); 
+    transform: translateY(-3px); 
+}
+
+/* ==========================================================================
+   5. GRIDS E CARDS GERAIS (INCLUINDO EVENTO)
+   ========================================================================== */
+.modern-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 30px; 
+    margin-top: 40px; 
+}
+
+.stat-card { 
+    background-color: var(--bg-alt); 
+    padding: 40px 20px; 
+    border-radius: 20px; 
+    text-align: center; 
+    box-shadow: var(--shadow); 
+    border-bottom: 5px solid var(--nature-green); 
+}
+
+.stat-number { 
+    display: block; 
+    font-size: 3rem; 
+    font-weight: 900; 
+    color: var(--ufj-blue); 
+    font-family: var(--font-heading); 
+}
+
+.featured-card { 
+    background-color: var(--bg-alt); 
+    border-radius: 20px; 
+    overflow: hidden; 
+    box-shadow: var(--shadow); 
+    transition: var(--transition); 
+    border-bottom: 5px solid var(--nature-green); 
+}
+
+.featured-card:hover { 
+    transform: translateY(-10px); 
+}
+
+.card-image { 
+    position: relative; 
+    height: 350px; 
+    width: 100%; 
+}
+
+.card-image img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center 15%; 
+}
+
+.badge { 
+    position: absolute; 
+    top: 15px; 
+    right: 15px; 
+    background-color: var(--accent-orange); 
+    color: #ffffff; 
+    padding: 6px 14px; 
+    border-radius: 20px; 
+    font-size: 0.8rem; 
+    font-weight: 700; 
+}
+
+.card-body { 
+    padding: 30px; 
+}
+
+.card-body h3 { 
+    margin-bottom: 10px; 
+    font-size: 1.25rem; 
+}
+
+.card-body p { 
+    color: var(--text-muted); 
+    font-size: 0.95rem; 
+}
+
+/* Banner do Evento com Aspect Ratio para evitar o visual 'fino' */
+.event-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-image img {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 4/3; /* Força um retângulo estético */
+    object-fit: cover; /* A imagem preenche o retângulo, focando no centro */
+    object-position: center top;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* ==========================================================================
+   6. ESTILO EXCLUSIVO: EQUIPE (COORDENADOR HORIZONTAL E GIGANTE)
+   ========================================================================== */
+.coordinator-card {
+    grid-column: 1 / -1; 
+    display: flex; 
+    flex-direction: row; 
+    background-color: var(--bg-alt); 
+    border-radius: 20px; 
+    overflow: hidden; 
+    box-shadow: var(--shadow); 
+    border-bottom: 5px solid var(--nature-green); 
+    margin-bottom: 20px; 
+}
+
+.coordinator-card .card-image { 
+    width: 50%; 
+    height: 500px; 
+}
+
+.coordinator-card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+.coordinator-card .card-body { 
+    width: 50%; 
+    padding: 60px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    text-align: left; 
+}
+
+.coordinator-card .card-body h3 { 
+    font-size: 2rem; 
+    margin-bottom: 15px; 
+}
+
+/* ==========================================================================
+   7. ESTILO EXCLUSIVO: BLOG E EXTENSÃO
+   ========================================================================== */
+.blog-layout { 
+    display: grid; 
+    grid-template-columns: 2fr 1fr; 
+    gap: 40px; 
+}
+
+.blog-excerpt { 
+    display: flex; 
+    gap: 20px; 
+    background: var(--bg-alt); 
+    padding: 20px; 
+    border-radius: 20px; 
+    margin-bottom: 30px; 
+    box-shadow: var(--shadow); 
+    border-bottom: 5px solid var(--nature-green); 
+}
+
+.blog-excerpt-img-wrapper { 
+    width: 300px; 
+    height: 250px; 
+    flex-shrink: 0; 
+    border-radius: 12px; 
+    overflow: hidden; 
+}
+
+.blog-excerpt-img-wrapper img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center; 
+}
+
+.excerpt-content { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+.sidebar { 
+    background: var(--bg-alt); 
+    padding: 30px; 
+    border-radius: 20px; 
+    box-shadow: var(--shadow); 
+    height: fit-content; 
+    border-top: 5px solid var(--ufj-blue); 
+}
+
+/* ==========================================================================
+   8. FILTROS, FORMULÁRIOS E APOIO (CONTATO)
+   ========================================================================== */
+.filter-container { 
+    display: flex; 
+    gap: 10px; 
+    margin-bottom: 30px; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    margin-top: 30px; 
+}
+
+.filter-btn { 
+    background-color: var(--bg-alt); 
+    border: 1px solid var(--border-color); 
+    color: var(--text-main); 
+    padding: 8px 20px; 
+    border-radius: 20px; 
+    cursor: pointer; 
+    font-weight: 500; 
+    transition: var(--transition); 
+}
+
+.filter-btn.active, 
+.filter-btn:hover { 
+    background-color: var(--nature-green); 
+    color: #ffffff; 
+    border-color: var(--nature-green); 
+}
+
+.producao-item { 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+}
+
+.form-control { 
+    width: 100%; 
+    padding: 15px; 
+    margin-bottom: 20px; 
+    border: 1px solid var(--border-color); 
+    border-radius: 12px; 
+    background-color: var(--bg-alt); 
+    color: var(--text-main); 
+    font-family: var(--font-body); 
+    font-size: 1rem; 
+    transition: var(--transition); 
+}
+
+.form-control:focus { 
+    outline: none; 
+    border-color: var(--nature-green); 
+    box-shadow: 0 0 0 3px rgba(0, 122, 120, 0.1); 
+}
+
+/* Logos de Apoio - Limpas e responsivas */
+.support-logos { 
+    display: flex; 
+    gap: 30px; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    margin-top: 20px; 
+}
+
+.support-logos img { 
+    width: 150px; 
+    height: auto; 
+    max-height: 80px; 
+    object-fit: contain; 
+}
+
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
+.footer-complex { 
+    background-color: #00222a; 
+    color: #94a3b8; 
+    padding: 60px 0 20px; 
+    margin-top: 60px; 
+}
+
+.footer-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 40px; 
+    margin-bottom: 40px; 
+}
+
+.footer-brand h3 { 
+    color: #ffffff; 
+    margin-bottom: 15px; 
+}
+
+.footer-contact h4 { 
+    color: #ffffff; 
+    margin-bottom: 20px; 
+}
+
+.footer-legal p { 
+    font-size: 0.9rem; 
+}
+
+/* ==========================================================================
+   10. RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .mobile-toggle { 
+        display: block; 
+    }
+
+    .nav-menu {
+        position: fixed; 
+        right: -100%; 
+        top: 0; 
+        height: 100vh; 
+        width: 80%; 
+        max-width: 400px;
+        background-color: var(--bg-alt); 
+        padding: 100px 40px; 
+        transition: 0.5s ease-in-out;
+        flex-direction: column; 
+        align-items: flex-start; 
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1); 
+        overflow-y: auto;
+    }
+
+    .nav-menu.active { 
+        right: 0; 
+    }
+
+    .nav-list { 
+        flex-direction: column; 
+        align-items: flex-start; 
+        width: 100%; 
+    }
+
+    .nav-link { 
+        color: var(--text-main); 
+        font-size: 1.5rem; 
+        width: 100%; 
+        padding: 15px 0; 
+        border-bottom: 1px solid var(--border-color); 
+        border-radius: 0; 
+    }
+
+    .nav-link:hover, 
+    .nav-link.active { 
+        background-color: transparent; 
+        color: var(--nature-green); 
+    }
+    
+    .menu-controls { 
+        padding-left: 0; 
+        border-left: none; 
+        border-top: 2px solid var(--border-color); 
+        padding-top: 30px; 
+        margin-top: 20px; 
+        width: 100%; 
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 20px; 
+    }
+
+    .hero-text-box h1 { 
+        font-size: 3rem; 
+    }
+}
+
+@media (max-width: 900px) {
+    .blog-layout { 
+        grid-template-columns: 1fr; 
+    }
+
+    .blog-excerpt { 
+        flex-direction: column; 
+    }
+
+    .blog-excerpt-img-wrapper { 
+        width: 100%; 
+        height: 250px; 
+    }
+    
+    .coordinator-card { 
+        flex-direction: column; 
+    }
+
+    .coordinator-card .card-image, 
+    .coordinator-card .card-body { 
+        width: 100%; 
+    }
+
+    .coordinator-card .card-image { 
+        height: 400px; 
+    }
+
+    .coordinator-card .card-body { 
+        padding: 30px; 
+        text-align: center; 
+    }
+}
+
+@media (max-width: 768px) {
+    .flex-between { 
+        flex-direction: column; 
+        text-align: center; 
+        gap: 20px; 
+    }
+
+    .header-content { 
+        flex-direction: row; 
+        justify-content: space-between; 
+    }
+
+    .hero-text-box h1 { 
+        font-size: 2.5rem; 
+    }
+
+    .btn-outline { 
+        margin-left: 0; 
+        margin-top: 15px; 
+        display: block; 
+        text-align: center; 
+    }
+
+    .btn { 
+        width: 100%; 
+    }
+    
+    .support-logos { 
+        justify-content: center; 
+    }
+}

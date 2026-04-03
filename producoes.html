@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título da Página | LACASE UFJ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container header-content">
+            <a href="index.html" class="brand">
+                <div class="brand-text">
+                    <span class="acronym">LACASE</span>
+                    <span class="sub-brand">Conservação Animal | UFJ</span>
+                </div>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="institucional.html" class="nav-link">Institucional</a></li>
+                    <li><a href="producoes.html" class="nav-link active">Produção Científica</a></li>
+                    <li><a href="equipe.html" class="nav-link">Equipe</a></li>
+                    <li><a href="blog.html" class="nav-link">Extensão</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+                <div class="menu-controls">
+                    <button id="theme-toggle" class="control-btn">🌓 Tema Escuro</button>
+                    <div class="font-controls">
+                        <button id="font-up" class="control-btn">A+</button>
+                        <button id="font-down" class="control-btn">A-</button>
+                    </div>
+                </div>
+            </nav>
+            <button class="mobile-toggle" id="mobile-toggle">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="container py-large">
+        <div class="section-header text-center">
+            <h2>Produção Acadêmica e Científica</h2>
+            <p>Trabalhos publicados pela Liga, englobando biologia funcional, educação ambiental e conservação de fauna silvestre.</p>
+        </div>
+        
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="biologia">Fisiologia e Morfologia</button>
+            <button class="filter-btn" data-filter="conservacao">Conservação e Impacto</button>
+            <button class="filter-btn" data-filter="extensao">Ensino e Extensão</button>
+        </div>
+
+        <div class="modern-grid" id="filterable-grid">
+            
+            <article class="featured-card producao-item" data-category="biologia">
+                <div class="card-body">
+                    <span class="badge" style="position:relative; top:0; right:0; display:inline-block; margin-bottom: 10px;">V CONBRACIB</span>
+                    <h3>Influência da temperatura na sensibilidade térmica locomotora e fisiológica</h3>
+                    <p>Revisão focada em lagartos <em>Tropidurus</em>, analisando métodos de gradiente térmico e limites críticos para atividade locomotora em resposta a variações climáticas.</p>
+                    <p class="text-muted" style="font-size: 0.85rem; margin-top: 10px; margin-bottom: 15px;">RODRIGUES, F. A.; SANTANA, A. A.; MORAIS, T. G. A.; ALVES-SOBRINHO, A. V.</p>
+                    <a href="artigos/36081.pdf" download="Influencia_Temperatura_Tropidurus_LACASE.pdf" target="_blank" class="link-more text-green" style="display:inline-block; font-weight: 700;">Baixar Documento (PDF) 📥</a>
+                </div>
+            </article>
+
+            <article class="featured-card producao-item" data-category="conservacao">
+                <div class="card-body">
+                    <span class="badge" style="position:relative; top:0; right:0; display:inline-block; margin-bottom: 10px;">II CONSAMEI</span>
+                    <h3>Bioindicadores do reino animalia sobre a qualidade ambiental</h3>
+                    <p>Revisão focada nos animais do Cerrado. O estudo avalia organismos animais utilizados para detectar poluentes, agrotóxicos e metais pesados no bioma.</p>
+                    <p class="text-muted" style="font-size: 0.85rem; margin-top: 10px; margin-bottom: 15px;">RODRIGUES, F. A.; SOUSA, F. J.; MORAIS, T. G. A.; COELHO, G. H. C.; ALVES-SOBRINHO, A. V.</p>
+                    <a href="artigos/37038.pdf" download="Bioindicadores_Cerrado_LACASE.pdf" target="_blank" class="link-more text-green" style="display:inline-block; font-weight: 700;">Baixar Documento (PDF) 📥</a>
+                </div>
+            </article>
+
+            <article class="featured-card producao-item" data-category="conservacao">
+                <div class="card-body">
+                    <span class="badge" style="position:relative; top:0; right:0; display:inline-block; margin-bottom: 10px;">V CONBRACIB</span>
+                    <h3>O papel fundamental das abelhas nos ecossistemas</h3>
+                    <p>Estudo focado no declínio populacional de polinizadores, abordando como a conservação das abelhas afeta a segurança alimentar e a reprodução da flora.</p>
+                    <p class="text-muted" style="font-size: 0.85rem; margin-top: 10px; margin-bottom: 15px;">SANTANA, A. A.; MORAIS, T. G. A.; RODRIGUES, F. A.; ALVES-SOBRINHO, A. V.</p>
+                    <a href="artigos/36074.pdf" download="Papel_Abelhas_Ecossistemas_LACASE.pdf" target="_blank" class="link-more text-green" style="display:inline-block; font-weight: 700;">Baixar Documento (PDF) 📥</a>
+                </div>
+            </article>
+
+            <article class="featured-card producao-item" data-category="conservacao">
+                <div class="card-body">
+                    <span class="badge" style="position:relative; top:0; right:0; display:inline-block; margin-bottom: 10px; background-color: var(--ufj-blue);">V CONBRACIB</span>
+                    <h3>O envenenamento por chumbo proveniente de atividade cinegética</h3>
+                    <p>Análise dos riscos à conservação de aves selvagens através da contaminação por munições de chumbo na América do Sul e Europa.</p>
+                    <p class="text-muted" style="font-size: 0.85rem; margin-top: 10px; margin-bottom: 15px;">ALVES-SOBRINHO, A. V.; RODRIGUES, F. A.; SANTANA, A. A.; MORAIS, T. G. A.</p>
+                    <a href="artigos/36078.pdf" download="Envenenamento_Chumbo_Aves_LACASE.pdf" target="_blank" class="link-more text-green" style="display:inline-block; font-weight: 700;">Baixar Documento (PDF) 📥</a>
+                </div>
+            </article>
+
+            <article class="featured-card producao-item" data-category="extensao">
+                <div class="card-body">
+                    <span class="badge" style="position:relative; top:0; right:0; display:inline-block; margin-bottom: 10px; background-color: var(--nature-green);">III ENSIPEX</span>
+                    <h3>Metodologia de ensino ativo na extensão - relato de caso</h3>
+                    <p>Investigação da aplicação do ciclo ação-reflexão-ação com 80 alunos de três colégios para educação ambiental, contrastando com palestras isoladas.</p>
+                    <p class="text-muted" style="font-size: 0.85rem; margin-top: 10px; margin-bottom: 15px;">RODRIGUES, F. A.; ZORTÉA, L. M.; COELHO, G. H. C.; MORAIS, T. G. A.; ALVES-SOBRINHO, A. V.</p>
+                    <a href="artigos/36952.pdf" download="Metodologia_Ensino_Ativo_Extensao_LACASE.pdf" target="_blank" class="link-more text-green" style="display:inline-block; font-weight: 700;">Baixar Documento (PDF) 📥</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer-complex">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>LACASE UFJ</h3>
+                <p>Liga Acadêmica de Conservação de Animais Silvestres e Exóticos.</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <p>lacaseufj@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-legal container text-center">
+            <p>&copy; 2026 LACASE UFJ. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

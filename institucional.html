@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título da Página | LACASE UFJ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container header-content">
+            <a href="index.html" class="brand">
+                <div class="brand-text">
+                    <span class="acronym">LACASE</span>
+                    <span class="sub-brand">Conservação Animal | UFJ</span>
+                </div>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="institucional.html" class="nav-link active">Institucional</a></li>
+                    <li><a href="producoes.html" class="nav-link">Produção Científica</a></li>
+                    <li><a href="equipe.html" class="nav-link">Equipe</a></li>
+                    <li><a href="blog.html" class="nav-link">Extensão</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+                <div class="menu-controls">
+                    <button id="theme-toggle" class="control-btn">🌓 Tema Escuro</button>
+                    <div class="font-controls">
+                        <button id="font-up" class="control-btn">A+</button>
+                        <button id="font-down" class="control-btn">A-</button>
+                    </div>
+                </div>
+            </nav>
+            <button class="mobile-toggle" id="mobile-toggle">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="container py-large">
+        <div class="section-header text-center">
+            <h2>Sobre a LACASE</h2>
+            <p>Conheça nossa história, missão e o papel da liga na Universidade Federal de Jataí.</p>
+        </div>
+
+        <section id="historico" class="bg-alt" style="padding: 40px; border-radius: 20px; box-shadow: var(--shadow); margin-bottom: 40px; border-top: 5px solid var(--ufj-blue);">
+            <h3 class="text-green" style="margin-bottom: 20px; font-size: 1.5rem;">Histórico</h3>
+            <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">A Liga Acadêmica de Conservação de Animais Silvestres e Exóticos (LACASE) da Universidade Federal de Jataí (UFJ) foi criada em <strong>abril de 2024</strong>. O surgimento da liga reflete a necessidade de aprofundar conhecimentos teóricos e práticos em áreas específicas por meio de atividades extracurriculares, integrando a universidade e a sociedade local. Nosso foco é promover a ciência a serviço da biodiversidade do Sudoeste Goiano e do ecossistema do Cerrado.</p>
+        </section>
+
+        <div class="modern-grid" style="align-items: stretch;">
+            <article class="featured-card" id="missao" style="border-bottom: 5px solid var(--nature-green);">
+                <div class="card-body">
+                    <h3 class="text-green" style="font-size: 1.4rem;">Objetivo e Missão</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px;">Promover a conscientização ambiental e a conservação da fauna silvestre, além de discutir o impacto da fauna exótica. Acreditamos na integração entre ensino, pesquisa e extensão para formar profissionais comprometidos com a preservação do meio ambiente e a proteção animal.</p>
+                </div>
+            </article>
+
+            <article class="featured-card" style="border-bottom: 5px solid var(--accent-orange);">
+                <div class="card-body">
+                    <h3 class="text-green" style="font-size: 1.4rem; color: var(--accent-orange);">Nossa Atuação</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px;">Utilização de metodologias ativas no ensino fundamental e médio (ciclo ação-reflexão-ação), realização de eventos abertos à comunidade, divulgação científica através das redes sociais e produção de artigos voltados à morfologia, biologia funcional e saúde ambiental.</p>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer-complex">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>LACASE UFJ</h3>
+                <p>Liga Acadêmica de Conservação de Animais Silvestres e Exóticos.</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <p>lacaseufj@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-legal container text-center">
+            <p>&copy; 2026 LACASE UFJ. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
